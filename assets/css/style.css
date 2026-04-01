@@ -17,6 +17,16 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #111827;
 }
 
 nav {
@@ -266,18 +276,36 @@ footer {
 
 @media (max-width: 768px) {
   nav {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
-  nav h1 {
-    font-size: 24px;
-    margin-bottom: 15px;
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 15px;
+    background-color: #ffffff;
+    padding: 15px 0;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  nav ul.show {
+    display: flex;
   }
 
   nav ul li {
     display: block;
-    margin: 10px 0 0 0;
+    margin: 10px 0;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 10px 0;
   }
 
   #hero h2 {
